@@ -8,7 +8,7 @@ The Web Audio API is powerful and daunting; __baud__ tames it, making it somethi
 
 ####Constructor
 ```javascript
-baud = new Baud()
+baud = Baud()
 ```
 
 ####Basics
@@ -53,6 +53,32 @@ rhodes.ready(function() {
 });
 ```
 
+Or audio input:
+```javascript
+input = baud.channel(0).listen()
+baud.play()
+baud.channel(0).record()
+baud.channel(0).stop()
+```
+
+Sends:
+```javascript
+verb = baud.reverb('/impulse_responses/plate.wav');
+baud.send(0).set('effect', verb);
+baud.channel(0).send(0, 0.1)
+```
+
+Effects:
+```javascript
+eq = baud.eq();
+eq.low.set('gain', 0.2)
+baud.channel.effects.push(eq);
+```
+
 ```javascript
 baud.channel(0).at(0).addEvent
 ```
+
+Visualize:
+```javascript
+baud.channel(0).visualize(function(gain) { /* no op */ }, 100);
