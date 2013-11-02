@@ -29,10 +29,13 @@ Schedule an event to happen at position time.
 
 ###events
 
+The internal events object
 
 
 ###processEvent
 
-Delegates
+Delegates events by type
 
 ###processPlayEvent
+
+Schedules a play event to fire at a specific time
